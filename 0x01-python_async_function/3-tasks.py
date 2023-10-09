@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Task wait random"""
 
 
@@ -8,6 +8,7 @@ from random import uniform
 
 
 def task_wait_random(max_delay: int) -> asyncio.Task:
+    """Task wait random"""
     wait_random = __import__('0-basic_async_syntax').wait_random
     loop = asyncio.get_event_loop()
     return loop.create_task(wait_random(max_delay))
