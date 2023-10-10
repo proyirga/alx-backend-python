@@ -2,9 +2,9 @@
 """9-element_length.py"""
 
 
-from typing import List, Tuple
+from typing import Iterable, List, Sequence, Tuple
 
 
-def element_length(lst: List[str]) -> List[Tuple[str, int]]:
-    """ELMENT_LENGTH"""
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """ELEMENT LENGTH"""
     return [(i, len(i)) for i in lst]
