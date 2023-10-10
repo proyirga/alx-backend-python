@@ -2,10 +2,10 @@
 """100-safe_first_element.py"""
 
 
-from typing import List, Union
+from typing import Any, List, Optional
 
 
-def safe_first_element(lst: List[Union[int, float, str]]) -> Union[int, float, str, None]:
+def safe_first_element(lst: Optional[List[Any]]) -> Optional[Any]:
     """Safe First Element"""
     if lst:
         return lst[0]
