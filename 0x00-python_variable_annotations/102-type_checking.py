@@ -5,7 +5,7 @@
 from typing import List, Tuple
 
 
-def zoom_array(lst: List[int], factor: int = 2) -> List[...]:
+def zoom_array(lst: List[int], factor: int = 2) -> List[int]:
     """ZOOM ARRAY, type checking"""
     zoomed_in: Tuple[int, ...] = tuple(
         item for item in lst
