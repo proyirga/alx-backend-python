@@ -2,12 +2,12 @@
 """101-safely_get_value.py"""
 
 
-from typing import Any, Dict, Optional, TypeVar
+from typing import Any, Mapping, Union, TypeVar
 
 
 T = TypeVar('T')
 
-def safely_get_value(dct: Dict[Any, T], key: Any, default: Optional[T] = None) -> Optional[T]:
+def safely_get_value(dct: Mapping, key: Any, default: Union[Any, T] = None) -> Union[Any, T]:
     """SAFELY GET VALUE"""
     if key in dct:
         return dct[key]
