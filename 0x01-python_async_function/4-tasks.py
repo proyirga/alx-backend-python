@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Multiple coroutines"""
 
+
 import asyncio
 from typing import List
+
 
 async def task_wait_random(max_delay: int) -> float:
     """Asynchronous function that waits for a random amount of time."""
@@ -10,6 +12,7 @@ async def task_wait_random(max_delay: int) -> float:
     delay = random.uniform(0, max_delay)
     await asyncio.sleep(delay)
     return delay
+
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """Asynchronous function that waits for a random amount of time (task_wait_random)."""
