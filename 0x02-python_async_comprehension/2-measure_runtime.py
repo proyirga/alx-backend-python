@@ -3,15 +3,20 @@
 
 
 import asyncio
-import random
+import time
+from importlib import import_module as using
+
+async_comprehension = using('1-async_comprehension').async_comprehension
 
 
-async_comprehension = __import__('async_generator')
+async def measure_runtime() -> float:
+    """
+    Asynchronous function that measures and returns the runtime of
+    running 4 instances of the async_comprehension function.
 
-
-async def measure_runtime():
-    """Measure runtime"""
-    start_time = asyncio.get_running_loop().time()
-    await asyncio.gather(async_comprehension(), async_comprehension(), async_comprehension(), async_comprehension())
-    end_time = asyncio.get_running_loop().time()
-    return end_time - start_time
+    Returns:
+        float: The runtime of the async_comprehension function in seconds.
+    """
+    start_time = time.time()
+    await asyncio.gather(*(async_comprehension() for _ in range(4)))
+    return time.time() - start_time
